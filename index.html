@@ -1,31 +1,167 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  </head>
-<body lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wayne Orr Portfolio</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #1f0e3a;
+      --panel: rgba(34, 13, 67, 0.88);
+      --panel-alt: rgba(49, 18, 98, 0.92);
+      --text: #ece7ff;
+      --muted: #c4b5fd;
+      --accent: #a78bfa;
+      --accent-soft: rgba(167, 139, 250, 0.18);
+      --border: rgba(195, 160, 255, 0.2);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
 
-<header>Wayne Orr's Portfolio Website</header>
-<h3>-----------------------------------------</h3>
- <h2>Hello World Wellcome To My Portfolio Website</h2>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<h3>-----------------------------------------</h3>
-<img src=https://www.gallery.ca/photo-blog/the-calotype-process />
-  
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, rgba(167, 139, 250, 0.16), transparent 30%),
+                  linear-gradient(180deg, #12052f 0%, #1f0e3a 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(16px);
+    }
+
+    header {
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+      font-size: 1rem;
+    }
+
+    .hero {
+      display: grid;
+      gap: 1.5rem;
+      align-items: center;
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    .hero-text h2 {
+      margin-bottom: 0.8rem;
+      font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      max-width: 38rem;
+    }
+
+    .hero-card {
+      background: var(--panel-alt);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      overflow: hidden;
+    }
+
+    .hero-card img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    section {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    h3 {
+      margin-bottom: 0.75rem;
+      color: #f8fafc;
+    }
+
+    p,
+    li {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 0.8rem;
+    }
+
+    li {
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      font-weight: 600;
+    }
+
+    .highlight {
+      color: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>Wayne Orr</header>
+    <p class="subtitle">Grade 12 student at Frontenac Secondary School | Aspiring videographer | Portfolio preview</p>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h2>Hello world — welcome to my portfolio website.</h2>
+        <p>I’m Wayne Orr, a Grade 12 student exploring video, photography, and creative storytelling. This page is a simple introduction to who I am and what I enjoy creating.</p>
+      </div>
+
+      <div class="hero-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Montague_Stanley_ca._1834-1844_calotype.jpg" alt="Historic calotype photograph by Hill & Adamson">
+      </div>
+    </div>
+
+    <section>
+      <h3>About me</h3>
+      <p>My name is Wayne Orr. I’m in my final semester at Frontenac Secondary School, and I hope to become a videographer in the future.</p>
+    </section>
+
+    <section>
+      <h3>Some of my hobbies</h3>
+      <ul>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="cooking.html">Cooking</a></li>
+      </ul>
+    </section>
+  </main>
 </body>
-  
 </html>
-
-<p>My name is Wayne Orr im a grade 12 student at Frontnac Secondary School in my final semsester
-
-
-</hr>
-
-in the futrue i hope to be a videographer
-</p>
-
-
-<ul>
-<p>some of my hobbys</p>
-  <li><b><mark>Photography</mark></b>/li>
-  <li><b>Games</b></li>
-  <li><b>cooking</b></li>
-</ul>
