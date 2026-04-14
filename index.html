@@ -80,6 +80,7 @@
       border-radius: 20px;
       padding: 1.5rem;
       overflow: hidden;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .hero-card img {
@@ -87,6 +88,7 @@
       display: block;
       border-radius: 16px;
       object-fit: cover;
+      transition: transform 0.1s ease-out;
     }
 
     section {
@@ -118,8 +120,41 @@
       background: rgba(148, 163, 184, 0.08);
       border: 1px solid rgba(148, 163, 184, 0.12);
       border-radius: 14px;
-      padding: 0.9rem 1rem;
+      padding: 0;
       font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    li:hover {
+      background: rgba(42, 16, 71, 0.8);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(167, 139, 250, 0.25);
+    }
+
+    li a {
+      display: block;
+      padding: 0.9rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-radius: 14px;
+    }
+
+    li a:hover {
+      color: var(--accent);
+      padding-left: 1.2rem;
+    }
+
+    li a::before {
+      content: "→ ";
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-weight: bold;
+    }
+
+    li a:hover::before {
+      opacity: 1;
     }
 
     .highlight {
@@ -160,8 +195,38 @@
         <li><a href="photography.html">Photography</a></li>
         <li><a href="games.html">Games</a></li>
         <li><a href="cooking.html">Cooking</a></li>
+        <li><a href="secret.html">Secret Page</a></li>
       </ul>
     </section>
   </main>
+
+  <script>
+    const heroCard = document.querySelector('.hero-card');
+    const maxDistance = 150; // Distance at which the image starts moving
+    const maxOffset = 40; // Maximum pixels to move
+
+    document.addEventListener('mousemove', (e) => {
+      const rect = heroCard.getBoundingClientRect();
+      const cardCenterX = rect.left + rect.width / 2;
+      const cardCenterY = rect.top + rect.height / 2;
+
+      const cursorX = e.clientX;
+      const cursorY = e.clientY;
+
+      const distX = cardCenterX - cursorX;
+      const distY = cardCenterY - cursorY;
+      const distance = Math.sqrt(distX * distX + distY * distY);
+
+      if (distance < maxDistance) {
+        const angle = Math.atan2(distY, distX);
+        const offsetX = Math.cos(angle) * maxOffset * (1 - distance / maxDistance);
+        const offsetY = Math.sin(angle) * maxOffset * (1 - distance / maxDistance);
+
+        heroCard.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      } else {
+        heroCard.style.transform = 'translate(0, 0)';
+      }
+    });
+  </script>
 </body>
 </html>
